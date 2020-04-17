@@ -12,6 +12,7 @@ namespace TestTask.Persistance.Repositories
         public NotesRepository()
         {
             this._notes = new Dictionary<Guid, Note>();
+            AddSomeNotes(10);
         }
 
         public void Add(Note note)
@@ -64,6 +65,16 @@ namespace TestTask.Persistance.Repositories
         public void Remove(Guid noteId)
         {
             this._notes.Remove(noteId);
+        }
+
+        private void AddSomeNotes(short numberOfNotes)
+        {
+            for (int i = 0; i < numberOfNotes; i++)
+            {
+                var note = new Note(Guid.NewGuid(), $"Note {i}");
+
+                this._notes[note.NoteId] = note;
+            }
         }
     }
 }
