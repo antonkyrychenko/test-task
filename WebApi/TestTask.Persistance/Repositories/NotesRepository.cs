@@ -50,7 +50,7 @@ namespace TestTask.Persistance.Repositories
             return this._notes.Values;
         }
 
-        public Note Get(Guid noteId)
+        public Note GetById(Guid noteId)
         {
             try
             {
@@ -71,7 +71,14 @@ namespace TestTask.Persistance.Repositories
         {
             for (int i = 0; i < numberOfNotes; i++)
             {
-                var note = new Note(Guid.NewGuid(), $"Note {i}");
+                var note = new Note()
+                {
+                    NoteId = Guid.NewGuid(),
+                    Label = $"Note label {i}",
+                    Text = $"Note text {i}",
+                    CreatedTime = DateTime.UtcNow - TimeSpan.FromHours(i),
+                    LastUpdatedTime = DateTime.UtcNow - TimeSpan.FromMinutes(10 * i)
+                };
 
                 this._notes[note.NoteId] = note;
             }

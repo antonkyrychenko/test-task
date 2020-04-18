@@ -8,7 +8,7 @@ namespace TestTask.Domain.Interfaces
     {
         IEnumerable<Note> Get();
 
-        Note Get(Guid noteId);
+        Note GetById(Guid noteId);
 
         void Add(Note note);
 

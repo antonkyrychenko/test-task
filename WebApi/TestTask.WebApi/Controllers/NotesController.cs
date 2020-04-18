@@ -2,6 +2,7 @@
 using System;
 using TestTask.Domain.Models;
 using TestTask.Services.Interfaces;
+using TestTask.WebApi.ViewModels;
 
 namespace TestTask.WebApi.Controllers
 {
@@ -29,12 +30,15 @@ namespace TestTask.WebApi.Controllers
         }
 
         [HttpPut("{noteId}")]
-        public IActionResult EditNote(Guid noteId, Note note)
+        public IActionResult EditNote(Guid noteId, [FromBody] EditNoteViewModel editNote)
         {
-            if(noteId != note.NoteId)
+            var note = new Note()
             {
-                return BadRequest();
-            }
+                NoteId = noteId,
+                Label = editNote.Label,
+                Text = editNote.Text,
+                LastUpdatedTime = DateTime.UtcNow
+            };
 
             _notesService.Edit(note);
 
@@ -50,9 +54,18 @@ namespace TestTask.WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddNote([FromHeader] string text)
+        public IActionResult AddNote([FromBody] AddNoteViewModel addNote)
         {
-            _notesService.Add(text);
+            var note = new Note()
+            {
+                NoteId = Guid.NewGuid(),
+                Label = addNote.Label,
+                Text = addNote.Text,
+                CreatedTime = DateTime.UtcNow,
+                LastUpdatedTime = DateTime.UtcNow
+            };
+
+            _notesService.Add(note);
 
             return Ok();
         }

@@ -15,15 +15,17 @@ namespace TestTask.Services.Services
             _notesRepository = notesRepository;
         }
 
-        public void Add(string text)
+        public void Add(Note note)
         {
-            var note = new Note(Guid.NewGuid(), text);
-
             _notesRepository.Add(note);
         }
 
         public void Edit(Note note)
         {
+            var savedNote = _notesRepository.GetById(note.NoteId);
+
+            note.CreatedTime = savedNote.CreatedTime;
+
             _notesRepository.Edit(note);
         }
 
@@ -34,7 +36,7 @@ namespace TestTask.Services.Services
 
         public Note GetById(Guid noteId)
         {
-            return _notesRepository.Get(noteId);
+            return _notesRepository.GetById(noteId);
         }
 
         public void Remove(Guid noteId)

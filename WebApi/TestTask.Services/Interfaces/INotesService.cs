@@ -10,7 +10,7 @@ namespace TestTask.Services.Interfaces
 
         Note GetById(Guid noteId);
 
-        void Add(string text);
+        void Add(Note note);
 
         void Remove(Guid noteId);
 
