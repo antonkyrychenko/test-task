@@ -1,0 +1,24 @@
+<table mat-table *ngIf="$notes" [dataSource]="$notes | async" class="mat-elevation-z8">
+    <ng-container matColumnDef="label">
+      <th mat-header-cell *matHeaderCellDef> Label </th>
+      <td mat-cell *matCellDef="let note"> {{note.labbel}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="createdTIme">
+      <th mat-header-cell *matHeaderCellDef> Created Time </th>
+      <td mat-cell *matCellDef="let note"> {{note.createdTime}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="lastUpdatedTime">
+      <th mat-header-cell *matHeaderCellDef> Last Updated Time </th>
+      <td mat-cell *matCellDef="let note"> {{note.lastUpdatedTime}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Id">
+      <th mat-header-cell *matHeaderCellDef>Id </th>
+      <td mat-cell *matCellDef="let note"> {{note.noteId}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row class="pointer" (click)="navigateToNote(note.noteId)" *matRowDef="let note; columns: displayedColumns;"></tr>
+  </table>
