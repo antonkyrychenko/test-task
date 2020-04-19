@@ -1,0 +1,12 @@
+:host() {
+    display: flex;
+    padding: 0px 10px 20px 10px;
+}
+
+.mat-list {
+    width: 100%;
+}
+
+.mat-list-item {
+    border-bottom: 1px solid grey;
+}

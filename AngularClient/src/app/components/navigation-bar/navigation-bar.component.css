@@ -1,0 +1,19 @@
+
+span {
+    color: rgba(0,0,0,0.87);
+    font-size: 32px;
+    margin-right: 30px;
+}
+
+.mat-button {
+    color: white;
+    font-size: 25px;
+    height: 2em;
+    background-color: #212121;
+}
+
+mat-select, .mat-form-field {
+    width: 50px;
+    margin-right: 5px;
+    margin-left: auto;
+}

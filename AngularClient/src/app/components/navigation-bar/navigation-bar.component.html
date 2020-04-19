@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+    <span fxFlex>TestTask</span>
+    <button mat-button (click)="navigateToNotes()">{{'NAVBAR.NOTES' | translate}}</button>
+    <mat-form-field>
+        <mat-select #langSelect [value]="selectedLang" (selectionChange)="selectLang(langSelect.value)">
+            <mat-option *ngFor="let lang of translate.getLangs()" [value]="lang">{{lang}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</mat-toolbar>
