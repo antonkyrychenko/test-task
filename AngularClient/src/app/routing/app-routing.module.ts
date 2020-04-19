@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NotesComponent } from '../pages/notes/notes.component';
+import { NoteComponent } from '../pages/note/note.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'notes',
     component: NotesComponent
+  },
+  {
+    path: 'notes/:id',
+    component: NoteComponent,
   },
 ];
 

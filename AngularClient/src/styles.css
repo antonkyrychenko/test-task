@@ -1,4 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+    min-height: 100vh;
+    height: auto;
+    margin: 0;
+}
+
+a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer, .mat-icon {
+    cursor: pointer;
+}
+
+.mat-form-field.stretch-height, .mat-form-field-infix, .mat-form-field-wrapper, .mat-form-field-flex, textarea {
+    height: 100%;
+}
+
+.mat-icon.big-icon {
+    height: 35px;
+    width: 35px;
+    margin-left: 20px;
+    font-size: 35px;
+}

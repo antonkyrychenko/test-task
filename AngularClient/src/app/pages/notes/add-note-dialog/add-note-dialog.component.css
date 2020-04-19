@@ -1,0 +1,12 @@
+button {
+    border-bottom: 2px solid #00e676;
+}
+
+.mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    height: 100px;
+}

@@ -1,24 +1,41 @@
-<table mat-table *ngIf="$notes" [dataSource]="$notes | async" class="mat-elevation-z8">
+<mat-toolbar>
+  <p>{{'NOTES.TITLE' | translate}}</p>
+  <mat-icon (click)="openAddNoteDialog()">add</mat-icon>
+</mat-toolbar>
+
+<div class="table-container">
+  <table mat-table *ngIf="$notes | async as notes" [dataSource]="notes" class="mat-elevation-z8">
     <ng-container matColumnDef="label">
-      <th mat-header-cell *matHeaderCellDef> Label </th>
-      <td mat-cell *matCellDef="let note"> {{note.labbel}} </td>
+      <th mat-header-cell *matHeaderCellDef> {{'NOTES.LABEL' | translate}} </th>
+      <td mat-cell (click)="navigateToNote(note.noteId)" *matCellDef="let note"> {{note.label}} </td>
     </ng-container>
-  
-    <ng-container matColumnDef="createdTIme">
-      <th mat-header-cell *matHeaderCellDef> Created Time </th>
-      <td mat-cell *matCellDef="let note"> {{note.createdTime}} </td>
+
+    <ng-container matColumnDef="createdTime">
+      <th mat-header-cell *matHeaderCellDef> {{'NOTES.CREATED_TIME' | translate}} </th>
+      <td mat-cell (click)="navigateToNote(note.noteId)" *matCellDef="let note">
+        {{note.lastUpdatedTime | date: 'MM/dd/yyyy HH:mm:ss'}} </td>
     </ng-container>
 
     <ng-container matColumnDef="lastUpdatedTime">
-      <th mat-header-cell *matHeaderCellDef> Last Updated Time </th>
-      <td mat-cell *matCellDef="let note"> {{note.lastUpdatedTime}} </td>
+      <th mat-header-cell *matHeaderCellDef> {{'NOTES.LAST_UPDATED_TIME' | translate}} </th>
+      <td mat-cell (click)="navigateToNote(note.noteId)" *matCellDef="let note">
+        {{note.lastUpdatedTime | date: 'MM/dd/yyyy HH:mm:ss'}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="Id">
+    <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef>Id </th>
-      <td mat-cell *matCellDef="let note"> {{note.noteId}} </td>
+      <td mat-cell (click)="navigateToNote(note.noteId)" *matCellDef="let note"> {{note.noteId}} </td>
     </ng-container>
-  
+
+    <ng-container matColumnDef="remove">
+      <th mat-header-cell *matHeaderCellDef> {{'NOTES.REMOVE' | translate}} </th>
+      <td mat-cell *matCellDef="let note">
+        <mat-icon (click)="removeNote(note.noteId)">delete</mat-icon>
+      </td>
+    </ng-container>
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row class="pointer" (click)="navigateToNote(note.noteId)" *matRowDef="let note; columns: displayedColumns;"></tr>
+    <tr mat-row class="pointer" *matRowDef="let note; columns: displayedColumns;sticky: true">
+    </tr>
   </table>
+</div>

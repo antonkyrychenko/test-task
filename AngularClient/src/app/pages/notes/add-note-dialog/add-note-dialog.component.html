@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>{{'ADD_NOTE.ADD_NOTE' | translate}}</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+        <input #labelInput required matInput maxlength="50" [(ngModel)]="note.label"
+            placeholder="{{'ADD_NOTE.NOTE_LABEL' | translate}}">
+    </mat-form-field>
+    <mat-form-field class="stretch-height" appearance="fill">
+        <mat-label>{{'ADD_NOTE.NOTE_TEXT' | translate}}</mat-label>
+        <textarea required matInput maxlength="200" [(ngModel)]="note.text"></textarea>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="cancel()">{{'ADD_NOTE.CANCEL' | translate}}</button>
+    <button mat-raised-button [disabled]="!note.label || !note.text" (click)="add()" cdkFocusInitial>{{'ADD_NOTE.ADD' | translate}}</button>
+</div>

@@ -1,0 +1,13 @@
+<mat-toolbar>
+    <p> {{'NOTE.TEXT' | translate}} </p>
+    <div *ngIf="isEditing; then editingMode else displayMode"></div>
+    <ng-template #editingMode>
+        <mat-icon class="big-icon" color="primary" (click)="saveNoteText(textInput.value)">save</mat-icon>
+    </ng-template>
+    <ng-template #displayMode>
+        <mat-icon class="big-icon" color="primary" (click)="editNoteText()">edit</mat-icon>
+    </ng-template>
+</mat-toolbar>
+<mat-form-field class="stretch-height" appearance="fill">
+    <textarea #textInput required [disabled]="!isEditing" matInput maxlength="200" [value]="text"></textarea>
+</mat-form-field>
