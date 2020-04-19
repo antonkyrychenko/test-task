@@ -1,0 +1,4 @@
+<mat-toolbar>
+    <p>{{'NOTE.GENERAL_INFO' | translate}}</p>
+</mat-toolbar>
+<app-list *ngIf="note" [items]="GetGeneralInfo()"></app-list>

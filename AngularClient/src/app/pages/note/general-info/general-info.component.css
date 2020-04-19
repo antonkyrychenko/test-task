@@ -1,0 +1,13 @@
+:host() {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    color: white;
+    font-size: 24px;
+}
+
+.mat-toolbar {
+    font-size: 25px;
+}

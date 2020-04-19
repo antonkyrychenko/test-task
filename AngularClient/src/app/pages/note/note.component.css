@@ -1,0 +1,40 @@
+p {
+    color: white;
+}
+
+.mat-toolbar {
+    margin-top: 35px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    border-bottom: 2px solid #00e676;
+}
+
+app-general-info {
+    margin-left: 10px;
+    margin-right: 5px;
+    border-bottom: 2px solid #00e676;
+}
+
+app-text {
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.black-background {
+    background-color: #424242;
+}
+
+.container {
+    display: flex;
+}
+
+.container>* {
+    flex: 1;
+}
+
+.mat-icon {
+    margin-left: 20px;
+    font-size: 35px;
+    height: 35px;
+    width: 35px;
+}

@@ -1,0 +1,19 @@
+<div *ngIf="$note | async as note">
+    <mat-toolbar>
+        <div *ngIf="isEditing; then editingMode else displayMode"></div>
+        <ng-template #editingMode>
+            <mat-form-field>
+                <input #labelInput required color="primary" matInput maxlength="50" [value]="note.label">
+            </mat-form-field>
+            <mat-icon class="big-icon" color="primary" (click)="saveNoteLabel(labelInput.value)">save</mat-icon>
+        </ng-template>
+        <ng-template #displayMode>
+            <p> {{note.label}} </p>
+            <mat-icon class="big-icon" color="primary" (click)="editNoteLabel()">edit</mat-icon>
+        </ng-template>
+    </mat-toolbar>
+    <div class="container">
+        <app-general-info class="black-background" [note]="note"></app-general-info>
+        <app-text class="black-background" (changeText)="saveNoteText($event)" [text]="note.text"></app-text>
+    </div>
+</div>
