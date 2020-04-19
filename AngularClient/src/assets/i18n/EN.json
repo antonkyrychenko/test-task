@@ -1,0 +1,23 @@
+{
+    "NOTES": {
+        "TITLE": "Notes",
+        "LABEL": "Label",
+        "CREATED_TIME": "Created Time",
+        "LAST_UPDATED_TIME": "Last Updated Time",
+        "REMOVE": "Remove"
+    },
+    "NAVBAR": {
+        "NOTES": "NOTES"
+    },
+    "ADD_NOTE": {
+        "ADD_NOTE": "Add Note",
+        "NOTE_LABEL": "Note Label",
+        "NOTE_TEXT": "Note Text",
+        "ADD": "Add",
+        "CANCEL": "Cancel"
+    },
+    "NOTE": {
+        "GENERAL_INFO": "General info",
+        "TEXT": "Text"
+    }
+}
