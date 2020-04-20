@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Note } from '@models';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -10,13 +10,12 @@ import { TranslateService } from '@ngx-translate/core';
 export class GeneralInfoComponent {
   @Input() note: Note;
 
-  constructor(private translate: TranslateService) {
-   }
+  constructor(private translate: TranslateService) { }
 
-  GetGeneralInfo() {
+  getGeneralInfo() {
     return [
       {
-        key: "Id : ",
+        key: 'Id : ',
         value: this.note.noteId
       },
       {
@@ -30,6 +29,6 @@ export class GeneralInfoComponent {
         key: `${this.translate.instant('NOTES.LAST_UPDATED_tIME')} : `,
         value: new Date(this.note.lastUpdatedTime).toLocaleString()
       }
-    ]
+    ];
   }
 }

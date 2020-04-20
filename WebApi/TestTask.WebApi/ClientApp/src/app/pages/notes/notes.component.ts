@@ -15,9 +15,6 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./notes.component.css']
 })
 export class NotesComponent implements OnInit {
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-
-
   $notes: Observable<Array<Note>>;
 
   displayedColumns: string[] = ['label', 'createdTime', 'lastUpdatedTime', 'id', 'remove'];
@@ -29,13 +26,6 @@ export class NotesComponent implements OnInit {
 
   ngOnInit(): void {
     this.$notes = this.notesService.getNotes();
-  }
-
-  getDataSource(notes: Note[]): MatTableDataSource<Note> {
-    const dataSource = new MatTableDataSource<Note>(notes)
-    dataSource.paginator = this.paginator;
-
-    return dataSource;
   }
 
   navigateToNote(id: string): void {
