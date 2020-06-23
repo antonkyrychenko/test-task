@@ -1,0 +1,30 @@
+{
+    "navbar": {
+        "notesButton": "Заметки",
+        "addNoteButton": "Добавить заметку"
+    },
+    "addNotePage": {
+        "title": "Добавить заметку"
+    },
+    "editNotePage": {
+        "title": "Редактировать заметку"
+    },
+    "noteForm": {
+        "label": "Заголовок",
+        "text": "Текст",
+        "submitButton": "Подтвердить"
+    },
+    "note": {
+        "id": "Идентификатор",
+        "label": "Заголовок",
+        "createdTime": "Время создания",
+        "lastUpdatedTime": "Время последнего обновления",
+        "text": "Текст"
+    },
+    "notes": {
+        "remove": "Удалить"
+    },
+    "noteDetailsPage": {
+        "generalInfo": "Общая информация"
+    }
+}
