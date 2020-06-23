@@ -1,0 +1,30 @@
+{
+    "navbar": {
+        "notesButton": "Notes",
+        "addNoteButton": "Add Note"
+    },
+    "addNotePage": {
+        "title": "Add Note"
+    },
+    "editNotePage": {
+        "title": "Edit Note"
+    },
+    "noteForm": {
+        "label": "Label",
+        "text": "Text",
+        "submitButton": "Submit"
+    },
+    "note": {
+        "id": "Id",
+        "label": "Label",
+        "createdTime": "Created Time",
+        "lastUpdatedTime": "Last Updated Time",
+        "text": "Text"
+    },
+    "notes": {
+        "remove": "Remove"
+    },  
+    "noteDetailsPage": {
+        "generalInfo": "General Info"
+    }
+}
